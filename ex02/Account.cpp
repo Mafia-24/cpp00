@@ -6,13 +6,19 @@
 /*   By: ymafaman <ymafaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 02:16:10 by ymafaman          #+#    #+#             */
-/*   Updated: 2024/05/27 06:17:54 by ymafaman         ###   ########.fr       */
+/*   Updated: 2024/05/27 08:06:24 by ymafaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
 #include <ctime>
+
+
+int Account::_nbAccounts = 0; // why should they be initialized
+int Account::_totalAmount = 0;
+int Account::_totalNbDeposits = 0;
+int Account::_totalNbWithdrawals = 0;
 
 Account::Account ( int initial_deposit )
 {
@@ -21,6 +27,7 @@ Account::Account ( int initial_deposit )
 	this->_nbWithdrawals = 0;
 	this->_accountIndex = Account::_nbAccounts;
 	Account::_nbAccounts++;
+	Account::_totalAmount += initial_deposit;
 
 	Account::_displayTimestamp();
 	
@@ -87,6 +94,8 @@ void	Account::makeDeposit( int deposit )
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
+	Account::_displayTimestamp();
+	
 	if (withdrawal > this->checkAmount())
 	{
 			std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount + withdrawal << ";withdrawal:refused" << std::endl;
@@ -98,8 +107,6 @@ bool	Account::makeWithdrawal( int withdrawal )
 
 	Account::_totalAmount -= withdrawal;
 	Account::_totalNbWithdrawals++;
-
-	Account::_displayTimestamp();
 	
 	std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount + withdrawal << ";withdrawal:" << withdrawal << ";amount:" << this->_amount << ";nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 	
