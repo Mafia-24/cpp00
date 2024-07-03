@@ -6,11 +6,11 @@
 #    By: ymafaman <ymafaman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/26 16:14:34 by ymafaman          #+#    #+#              #
-#    Updated: 2024/05/27 06:17:42 by ymafaman         ###   ########.fr        #
+#    Updated: 2024/05/29 00:42:00 by ymafaman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CPP = c++
+CPP = g++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 

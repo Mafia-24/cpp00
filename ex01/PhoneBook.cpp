@@ -6,7 +6,7 @@
 /*   By: ymafaman <ymafaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 19:46:48 by ymafaman          #+#    #+#             */
-/*   Updated: 2024/05/16 12:58:34 by ymafaman         ###   ########.fr       */
+/*   Updated: 2024/05/29 00:14:08 by ymafaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,12 @@ void	PhoneBook::search_contact()
 	}
 	
 	std::cout << std::endl << "Choose An Index : ";
-	std::cin >> input;
+	getline(std::cin, input);
+	if (std::cin.eof())
+	{
+		std::cout << std::endl << std::endl <<"Phone book closed. Until next time!" << std::endl << std::endl;
+		exit (0);
+	}
 	std::cout << std::endl;
 	
 	if (input.length() != 1)
@@ -66,7 +71,6 @@ void	PhoneBook::search_contact()
 		std::cout << "YOU HAVE CHOOSED A WRONG INDEX!" << std::endl;
 		return ;
 	}	
-	// if (std::cin.eof())
 	
 	contacts[choosen_index - 1].show_full_contact_info();
 }

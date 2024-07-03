@@ -12,7 +12,6 @@
 #include <functional>
 #include "Account.hpp"
 
-
 int		main( void ) {
 
 	typedef std::vector<Account::t>							  accounts_t; // accounts t is the type for the Account class vector.
@@ -40,7 +39,7 @@ int		main( void ) {
 	Account::displayAccountsInfos();
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
-	for ( acc_int_t it( acc_begin, dep_begin );
+	for ( acc_int_t it( acc_begin, dep_begin ); 
 		  it.first != acc_end && it.second != dep_end;
 		  ++(it.first), ++(it.second) ) {
 
