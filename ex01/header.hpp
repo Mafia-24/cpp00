@@ -15,9 +15,10 @@
 # define HEADER_HPP
 
 #include "PhoneBook.hpp"
-
+#include "header.hpp"
 
 void	trim_field(std::string &field);
+void    show_labels(void);
 int		validat_phone_number(std::string field);
 int		get_field(std::string &field, std::string label);
 int		get_contact_info(int& index, Contact& contact);

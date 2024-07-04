@@ -65,3 +65,16 @@ int	validat_phone_number(std::string field)
 
 	return (1);
 }
+
+void	show_labels( void )
+{
+	std::cout << std::setw(10) << std::right  << "Index";
+	std::cout << " | ";
+	std::cout << std::setw(10) << std::right  << "First Name";
+	std::cout << " | ";
+	std::cout << std::setw(10) << std::right  << "Last Name";
+	std::cout << " | ";
+	std::cout << std::setw(10) << std::right  << "Nickname" << std::endl;
+	std::cout << std::setw(50) << std::setfill('-') << "-";
+	std::cout << std::setfill(' ') << std::endl;
+}

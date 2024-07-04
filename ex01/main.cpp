@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PhoneBook.hpp"
 #include "header.hpp"
 
 int	main()
@@ -31,7 +32,7 @@ int	main()
 		std::cout << "CHOOSE A COMMAND : ";
 		
 		getline (std::cin, input);
-		
+
 		if (std::cin.eof ())
 			break ;
 

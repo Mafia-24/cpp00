@@ -24,7 +24,6 @@ class PhoneBook
 		int		available_contacts;
 		int		contacts_offset;
 
-		void	add_new_contact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number,std::string darkest_secret);
 		void	add_new_contact(Contact newContact);
 		void	search_contact();
 };

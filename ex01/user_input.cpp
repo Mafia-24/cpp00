@@ -29,11 +29,19 @@ int	get_field(std::string &field, std::string label)
 		std::cout << std::endl << std::endl;
 		return (get_field (field, label));
 	}
-	
+
 	if (label == "phone number   : ")
 	{
 		if (validat_phone_number (field) == -1)
 			return (get_field (field, label));
+	}
+
+	// replace white spaces with spaces
+
+	for (int i = 0; i < (int) field.length(); i++)
+	{
+		if (field[i] >= 9 && field[i] <= 13)
+			field[i] = ' ';
 	}
 
 	return (1);
